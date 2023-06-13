@@ -13,6 +13,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function create(request $request){
-        return "you clicked sign up";
+        return $request->all();
     }
 }
