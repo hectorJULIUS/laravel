@@ -34,3 +34,7 @@ Route::get('/login', function () {
 });
 Route::get('/process_signup', [Controller::class, 'create'] );
 
+Route::get('/forgot', function () {
+    return view('forgot');
+});
+

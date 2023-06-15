@@ -87,9 +87,10 @@
             <input type="submit" value="Login">
             
             <div class="forgot-password">
-                <a href="#">Forgot password?</a>
+                <a href="/forgot">Forgot password?</a>
             </div>
         </form>
     </div>
+    @include('footer')
 </body>
 </html>

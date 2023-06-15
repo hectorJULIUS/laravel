@@ -78,5 +78,6 @@
             <input type="submit" name="sign up" value="Sign Up">
         </form>
     </div>
+    @include('footer')
 </body>
 </html>

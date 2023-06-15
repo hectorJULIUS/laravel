@@ -9,5 +9,6 @@
 </head>
 <body>
 @include('navbar')
+@include('footer')
 </body>
 </html>
