@@ -73,6 +73,7 @@
     </style>
 </head>
 <body>
+@include('navbar')
     <h1>Log In Now</h1>
     <div class="container">
         <h1>Login</h1>

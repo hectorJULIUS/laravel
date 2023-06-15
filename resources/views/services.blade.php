@@ -7,6 +7,7 @@
     <title>services</title>
 </head>
 <body>
+@include('navbar')
     <h1>services Page</h1>
 </body>
 </html>

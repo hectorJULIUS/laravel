@@ -61,6 +61,7 @@
     
 </head>
 <body>
+@include('navbar')
     <h1>Register Now</h1>
     <div class="container">
         <h1>Sign Up</h1>

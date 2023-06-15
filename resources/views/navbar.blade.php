@@ -34,9 +34,7 @@
             opacity: 0.8;
         }
     </style>
-</head>
-<body>
-    <nav>
+<nav>
         <ul>
             <li>
                 <a href="/">Home</a>
@@ -48,4 +46,3 @@
             </li>
         </ul>
     </nav>
-</body>

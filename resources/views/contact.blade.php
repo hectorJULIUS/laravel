@@ -7,6 +7,7 @@
     <title>contact Us</title>
 </head>
 <body>
+@include('navbar')
     <h1>contact Us Pge</h1>
 </body>
 </html>

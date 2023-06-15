@@ -7,6 +7,7 @@
     <title>About us</title>
 </head>
 <body>
+    @include('navbar')
     <h1>About Us page</h1>
 </body>
 </html>
