@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoansController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +20,39 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/signup', function () {
-    return view('signup');
-});
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/signup', function () {
+    return view('signup');
+});
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
 Route::get('/services', function () {
     return view('services');
 });
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/process_signup', [Controller::class, 'create'] );
-
-Route::get('/forgot', function () {
-    return view('forgot');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
 });
 
+Route::post('/process_register',[Usercontroller::class,'store']);
+Route::post('/login', [LoginController::class, 'login']);
+
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});
+
+Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
+Route::get('/dashboard/loans', [DashboardController::class, 'loans'])->name('dashboard.loans');
+Route::patch('/profile/update', [DashboardController::class, 'update_profile'])->name('profile.update');
+
+Route::post('/apply-loan',[LoansController::class,'store']);

@@ -38,6 +38,7 @@
         }
         
         input[type="text"],
+        input[type="email"],
         input[type="password"] {
             padding: 10px;
             margin-bottom: 10px;
@@ -74,12 +75,47 @@
 </head>
 <body>
 @include('navbar')
-    <h1>Log In Now</h1>
+
+@if(session()->has('success'))
+    <style>
+        .popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="popup">
+        {{ session('success') }}
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.querySelector('.popup').addEventListener('click', function() {
+                this.style.display = 'none';
+            });
+        }
+    </script>
+@endif
+
+
+
+    
     <div class="container">
         <h1>Login</h1>
-        <form>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <form action='/login' method='POST'>
+            @csrf
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>

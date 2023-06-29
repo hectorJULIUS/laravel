@@ -62,18 +62,30 @@
 </head>
 <body>
 @include('navbar')
+
     <h1>Register Now</h1>
     <div class="container">
         <h1>Sign Up</h1>
-        <form action="/process_signup" >
+        <form action="/process_register" method="POST" >
+            @csrf
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
+            @error('name')
+            <div class="error">{{ $message }}</div>
+            @enderror
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            @error('email')
+            <div class="error">{{ $message }}</div>
+            @enderror
+
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            @error('password')
+            <div class="error">{{ $message }}</div>
+            @enderror
             
             <input type="submit" name="sign up" value="Sign Up">
         </form>
