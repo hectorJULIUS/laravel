@@ -55,4 +55,4 @@ Route::get('/dashboard/profile', [DashboardController::class, 'profile'])->name(
 Route::get('/dashboard/loans', [DashboardController::class, 'loans'])->name('dashboard.loans');
 Route::patch('/profile/update', [DashboardController::class, 'update_profile'])->name('profile.update');
 
-Route::post('/apply-loan',[LoansController::class,'store']);
+Route::post('/applyloan',[LoansController::class,'store']);

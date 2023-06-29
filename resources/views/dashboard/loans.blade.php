@@ -85,7 +85,7 @@
     </script>
 @endif
 
-    <form method="POST" action="/apply-loan">
+    <form method="POST" action="/applyloan">
         @csrf
         <div class="form-group">
             <label for="name">Name:</label>
